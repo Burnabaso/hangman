@@ -18,6 +18,8 @@ function renderDashes() {
 }
 // just for testing purposes to see the word
 // console.log(chosenWord)
+
+//O(1)
 function alertUser(msg) {
   if (msg === "win") {
     window.alert("Congratulations! You Won!");
@@ -28,21 +30,24 @@ function alertUser(msg) {
     window.location.reload();
   },800)
   
-}
+} 
+// O(1)
 addEventListener("keydown", function (k) {
     var keyPressed = k.key;
-    for (var i = 0; i < letters.length; i++) {
-        if (letters[i].innerHTML.toLowerCase() === keyPressed) {
+    for (var i = 0; i < letters.length; i++) { //O(1)
+        if (letters[i].innerHTML.toLowerCase() === keyPressed) { //O(1)
             if(k.key === chosenWord[press]){
                 spans[press].innerHTML = letters[i].innerHTML;
             }
             // if the number of correct presses reached the end of the word => win
             else if (press === chosenWord.length){
+                //O(1)
                 alertUser("win")
             }
             else{
                 attempt++
                 // add body part according to number of wrong attempt
+                //O(1)
                 addHang(attempt);
                 press--;
                 if (attempt===6){

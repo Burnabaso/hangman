@@ -1,5 +1,5 @@
 const hangSection = document.getElementById("hang");
-
+//O(1)
 function addHang(attempts) {
   var part = document.createElement("img");
   if (attempts === 1) {
